@@ -17,21 +17,21 @@ def parse_file(input):
     return elves
 
 
-def top_calories(input):
-    elves = parse_file(input)    
+def top_calories(elves):
     return max(elves)
 
 
-def top_three_calories(input):
-    elves = parse_file(input)
+def top_three_calories(elves):
     elves.sort(reverse=True)
     return elves[0] + elves[1] + elves[2]
 
 
 if __name__ == "__main__":
     print("\n--- Day 1: Calorie Counting ---")
-    max_cal = top_calories("input.txt")
+    elves = parse_file("input.txt")
+
+    max_cal = top_calories(elves)
     print(f"\n[+] Max calories: {max_cal}")
 
-    top_3 = top_three_calories("input.txt")
-    print(f"[+] Top 3 calories (sum): {top_3}\n")
+    top_3 = top_three_calories(elves)
+    print(f"[+] Top 3 calories (sum): {top_3}")
